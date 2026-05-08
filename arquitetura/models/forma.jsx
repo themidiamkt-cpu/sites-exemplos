@@ -172,7 +172,7 @@ function FormaSite() {
 
       <footer style={c.foot}>
         <div>THE MIDIA / ARQUITETURA · ESTÚDIO</div>
-        <div>© 2025 · CNPJ 39.811.477/0001-22</div>
+        <div>© 2025 · CNPJ 99.999.999/0001-00</div>
         <div style={c.footMono}>v3.1 · BUILD 2025.05</div>
       </footer>
     </div>

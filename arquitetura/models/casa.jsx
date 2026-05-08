@@ -166,7 +166,7 @@ function CasaSite() {
           <div style={c.ctaCard}>
             <div style={c.ctaCardLabel}>Fale com a gente</div>
             <div style={c.ctaCardValue}>comercial@themidiamarketing.com.br</div>
-            <div style={c.ctaCardLabel} style={{ ...c.ctaCardLabel, marginTop: 24 }}>Telefone</div>
+            <div style={{ ...c.ctaCardLabel, marginTop: 24 }}>Telefone</div>
             <div style={c.ctaCardValue}>+55 19 99931-5179</div>
             <a style={c.ctaCardBtn}>Quero conversar →</a>
           </div>

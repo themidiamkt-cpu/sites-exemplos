@@ -262,7 +262,7 @@ const galleryStyles = {
 
   grid: {
     maxWidth: 1280, margin: '0 auto', padding: '0 32px',
-    display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: 28,
+    display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 360px), 1fr))', gap: 28,
   },
   card: {
     all: 'unset', cursor: 'pointer', display: 'flex', flexDirection: 'column',

@@ -198,7 +198,7 @@ function ConstrutoraSite() {
           </div>
         </div>
         <div style={c.footBot}>
-          <span>© 2025 The Midia Arquitetura · CNPJ 38.471.882/0001-04</span>
+          <span>© 2025 The Midia Arquitetura · CNPJ 99.999.999/0001-00</span>
           <span>CREA-SP 5070123456 · CAU A123456-7</span>
         </div>
       </footer>

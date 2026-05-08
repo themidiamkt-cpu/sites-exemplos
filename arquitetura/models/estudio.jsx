@@ -143,7 +143,7 @@ function EstudioSite() {
         <div style={c.brand}>THE MIDIA<span style={c.brandDot}>.</span></div>
         <div style={c.footerCols}>
           <span>© 2025 The Midia Arquitetura</span>
-          <span>CNPJ 28.471.882/0001-04</span>
+          <span>CNPJ 99.999.999/0001-00</span>
           <span>Política de privacidade</span>
         </div>
       </footer>

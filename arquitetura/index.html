@@ -37,6 +37,55 @@
   .wa-float svg { width: 20px; height: 20px; }
   /* Selection */
   ::selection { background: #eae6df; color: #0d0d0c; }
+
+  @media (max-width: 860px) {
+    html, body, #root, .preview-frame { width: 100%; max-width: 100%; overflow-x: hidden; }
+    .preview-frame [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+    .preview-frame [style*="display: flex"] { flex-wrap: wrap !important; }
+    .preview-frame [style*="padding: 120px"],
+    .preview-frame [style*="padding: 100px"],
+    .preview-frame [style*="padding: 90px"],
+    .preview-frame [style*="padding: 80px"],
+    .preview-frame [style*="padding: 74px"],
+    .preview-frame [style*="padding: 72px"],
+    .preview-frame [style*="padding: 70px"],
+    .preview-frame [style*="padding: 64px"],
+    .preview-frame [style*="padding: 60px"] { padding: 48px 20px !important; }
+    .preview-frame [style*="gap: 80px"],
+    .preview-frame [style*="gap: 70px"],
+    .preview-frame [style*="gap: 60px"],
+    .preview-frame [style*="gap: 56px"],
+    .preview-frame [style*="gap: 54px"],
+    .preview-frame [style*="gap: 50px"],
+    .preview-frame [style*="gap: 40px"] { gap: 24px !important; }
+    .preview-frame [style*="minmax(360px"],
+    .preview-frame [style*="minmax(320px"] { grid-template-columns: 1fr !important; }
+    .preview-frame img { max-width: 100%; height: auto; }
+    .preview-frame [style*="width: 100vw"] { width: 100% !important; }
+    .preview-frame [style*="font-size: 32px"] { font-size: 24px !important; }
+    .wa-float {
+      left: 14px; right: 14px; bottom: 14px;
+      justify-content: center; padding: 13px 16px; font-size: 13px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .preview-frame [style*="font-size: clamp(72px"],
+    .preview-frame [style*="font-size: clamp(64px"],
+    .preview-frame [style*="font-size: clamp(56px"],
+    .preview-frame [style*="font-size: clamp(52px"],
+    .preview-frame [style*="font-size: clamp(48px"] {
+      font-size: clamp(36px, 13vw, 58px) !important;
+      line-height: 1.02 !important;
+    }
+    .preview-frame [style*="height: 640px"],
+    .preview-frame [style*="height: 620px"],
+    .preview-frame [style*="height: 560px"],
+    .preview-frame [style*="min-height: 620px"] {
+      height: auto !important;
+      min-height: 520px !important;
+    }
+  }
 </style>
 </head>
 <body>
