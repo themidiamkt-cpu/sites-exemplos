@@ -370,14 +370,15 @@ function renderSiteWithInquiry(Site, model) {
     );
   }
 
-  let insertAt = children.length;
-  for (let i = children.length - 1; i >= 0; i -= 1) {
-    const child = children[i];
+  const contentIndexes = children.reduce((indexes, child, index) => {
     if (React.isValidElement(child) && child.type !== 'style') {
-      insertAt = i;
-      break;
+      indexes.push(index);
     }
-  }
+    return indexes;
+  }, []);
+  const insertAt = contentIndexes.length > 1
+    ? contentIndexes[contentIndexes.length - 2]
+    : contentIndexes[0] || children.length;
 
   const nextChildren = [
     ...children.slice(0, insertAt),
