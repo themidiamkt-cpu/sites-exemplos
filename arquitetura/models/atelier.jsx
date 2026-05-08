@@ -12,10 +12,10 @@ function AtelierSite() {
       {/* Nav */}
       <nav style={c.nav}>
         <div style={c.logo}><img src="../assets/the-midia-logo.png" alt="The Midia Marketing" style={c.logoImg} /><span>The Midia <span style={c.logoItalic}>Arquitetura</span></span></div>
-        <ul style={c.navList}>
+        <ul style={c.navList} className="desktop-menu">
           <li>Trabalhos</li><li>Estúdio</li><li>Processo</li><li>Contato</li>
         </ul>
-        <div style={c.navRight}>PT · EN</div>
+        <div style={c.navRight} className="desktop-menu">PT · EN</div>
       </nav>
 
       {/* Hero */}

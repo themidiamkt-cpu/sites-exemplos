@@ -350,6 +350,7 @@ function PreviewShell({ model, navigate }) {
         </a>
       </div>
       <div className="preview-frame" style={previewStyles.frame}>
+        <MobileSiteMenu model={model} />
         {renderSiteWithInquiry(Site, model)}
       </div>
       <a href={waLink(model.name)} target="_blank" rel="noopener" className="wa-float">
@@ -357,6 +358,25 @@ function PreviewShell({ model, navigate }) {
         Quero esse modelo
       </a>
     </div>
+  );
+}
+
+function MobileSiteMenu({ model }) {
+  return (
+    <details className="mobile-site-menu">
+      <summary aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+        <a href={waLink(model.name)} target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </details>
   );
 }
 

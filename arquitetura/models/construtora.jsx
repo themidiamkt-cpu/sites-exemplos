@@ -35,10 +35,10 @@ function ConstrutoraSite() {
             <div style={c.brandTag}>PROJETO · GERENCIAMENTO · EXECUÇÃO</div>
           </div>
         </div>
-        <ul style={c.navList}>
+        <ul style={c.navList} className="desktop-menu">
           <li>Início</li><li>Serviços</li><li>Obras</li><li>Equipe</li><li>Imprensa</li><li>Contato</li>
         </ul>
-        <a style={c.cta}>Solicitar orçamento</a>
+        <a style={c.cta} className="desktop-menu">Solicitar orçamento</a>
       </nav>
 
       <section style={c.hero}>

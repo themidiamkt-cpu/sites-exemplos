@@ -17,7 +17,7 @@ function AuroraSite() {
             <img src={`${assetBase}the-midia-logo.png`} alt="The Midia Marketing" style={c.logo} />
             <span>The Midia Arq</span>
           </div>
-          <div style={c.links} className="aurora-links">
+          <div style={c.links} className="desktop-menu aurora-links">
             <a>Home</a><a>Projetos</a><a>Arquitetos</a><a>Serviços</a><a>Contato</a>
           </div>
         </nav>

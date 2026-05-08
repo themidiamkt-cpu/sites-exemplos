@@ -16,10 +16,10 @@ function InterioresSite() {
         <div style={c.brandWrap}>
           <div style={c.brand}>The Midia<br /><em style={c.brandEm}>arquitetura</em></div>
         </div>
-        <ul style={c.navList}>
+        <ul style={c.navList} className="desktop-menu">
           <li>portfólio</li><li>servicos</li><li>diário</li><li>contato</li>
         </ul>
-        <div style={c.navRight}>
+        <div style={c.navRight} className="desktop-menu">
           <span style={c.navIcon}>♡</span>
           <a style={c.navCta}>agendar conversa</a>
         </div>

@@ -16,7 +16,7 @@ function FormaSite() {
           <span style={c.headBrandSlash}>/</span>
           <span style={c.headBrandText}>ARQUITETURA</span>
         </div>
-        <nav style={c.headNav}>
+        <nav style={c.headNav} className="desktop-menu">
           <a>[ INDEX ]</a>
           <a>[ ESTÚDIO ]</a>
           <a>[ TEXTOS ]</a>

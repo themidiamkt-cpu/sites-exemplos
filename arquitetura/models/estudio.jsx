@@ -12,7 +12,7 @@ function EstudioSite() {
       {/* Top */}
       <header style={c.top}>
         <div style={c.brand}>THE MIDIA<span style={c.brandDot}>.</span></div>
-        <nav style={c.nav}>
+        <nav style={c.nav} className="desktop-menu">
           <a style={c.navItem}>Index</a>
           <a style={c.navItem}>Estúdio</a>
           <a style={c.navItem}>Press</a>

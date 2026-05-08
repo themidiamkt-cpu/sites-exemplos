@@ -15,10 +15,10 @@ function PremiumSite() {
           <span style={c.brandLine} />
           <span style={c.brandSub}>ARQUITETURA</span>
         </div>
-        <ul style={c.navList}>
+        <ul style={c.navList} className="desktop-menu">
           <li>Início</li><li>Projetos</li><li>Sobre</li><li>Imprensa</li><li>Contato</li>
         </ul>
-        <a style={c.navCta}>Iniciar projeto →</a>
+        <a style={c.navCta} className="desktop-menu">Iniciar projeto →</a>
       </nav>
 
       <section style={c.hero}>

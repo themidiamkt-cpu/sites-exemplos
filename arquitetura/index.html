@@ -35,11 +35,64 @@
   }
   .wa-float:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(37,211,102,.45); }
   .wa-float svg { width: 20px; height: 20px; }
+  .mobile-site-menu { display: none; }
   /* Selection */
   ::selection { background: #eae6df; color: #0d0d0c; }
 
   @media (max-width: 860px) {
     html, body, #root, .preview-frame { width: 100%; max-width: 100%; overflow-x: hidden; }
+    .desktop-menu { display: none !important; }
+    .mobile-site-menu {
+      display: block;
+      position: fixed;
+      top: 68px;
+      right: 14px;
+      z-index: 9998;
+      font-family: 'Manrope', system-ui, sans-serif;
+    }
+    .mobile-site-menu summary {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: rgba(17,17,15,.92);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 12px 32px rgba(0,0,0,.22);
+      display: grid;
+      place-content: center;
+      gap: 5px;
+      list-style: none;
+      cursor: pointer;
+    }
+    .mobile-site-menu summary::-webkit-details-marker { display: none; }
+    .mobile-site-menu summary span {
+      width: 19px;
+      height: 2px;
+      border-radius: 999px;
+      background: #fff;
+      display: block;
+    }
+    .mobile-site-menu nav {
+      position: absolute;
+      top: 54px;
+      right: 0;
+      min-width: 210px;
+      padding: 10px;
+      border-radius: 16px;
+      background: rgba(17,17,15,.96);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 20px 48px rgba(0,0,0,.28);
+      display: grid;
+      gap: 2px;
+    }
+    .mobile-site-menu nav a {
+      color: #f7f3ee;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 13px;
+      border-radius: 10px;
+    }
+    .mobile-site-menu nav a:hover { background: rgba(255,255,255,.08); }
     .preview-frame [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
     .preview-frame [style*="display: flex"] { flex-wrap: wrap !important; }
     .preview-frame [style*="padding: 120px"],

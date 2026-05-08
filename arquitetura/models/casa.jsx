@@ -36,10 +36,10 @@ function CasaSite() {
           <span style={c.brandAmp}>&</span>
           <span style={c.brandSerif}>Arquitetura</span>
         </div>
-        <ul style={c.navList}>
+        <ul style={c.navList} className="desktop-menu">
           <li>Projetos</li><li>Atelier</li><li>Imprensa</li><li>Contato</li>
         </ul>
-        <a style={c.navCta}>Agende uma visita →</a>
+        <a style={c.navCta} className="desktop-menu">Agende uma visita →</a>
       </nav>
 
       {/* Hero */}
