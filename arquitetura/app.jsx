@@ -92,6 +92,18 @@ const MODELS = [
     Component: () => window.ConstrutoraSite ? <window.ConstrutoraSite /> : null,
   },
   {
+    id: 'aurora',
+    name: 'Residência Aurora',
+    tag: 'Institucional · Portfólio',
+    desc: 'Inspirado em escritórios clássicos: hero com obra, equipe, mosaico de projetos, serviços, mapa de atuação e feedbacks.',
+    badge: 'Novo',
+    fakeUrl: 'residenciaaurora.arq.br',
+    accent: '#4c4c4c',
+    bg: '#ecebea',
+    cover: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1200&auto=format&fit=crop&q=80',
+    Component: () => window.AuroraSite ? <window.AuroraSite /> : null,
+  },
+  {
     id: 'themidia-arq',
     name: 'The Midia Arq',
     tag: 'Interiores · Pacotes',
