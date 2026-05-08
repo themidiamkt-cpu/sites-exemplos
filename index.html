@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sites Exemplos · The Midia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #0d0d0c;
+    color: #eae6df;
+    font-family: Manrope, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 42px 24px 80px;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 92px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    letter-spacing: .02em;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #eae6df;
+  }
+  h1 {
+    max-width: 900px;
+    margin: 0;
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(54px, 9vw, 118px);
+    line-height: .96;
+    font-weight: 400;
+    letter-spacing: -.02em;
+  }
+  .lede {
+    max-width: 650px;
+    margin: 28px 0 58px;
+    color: #aaa39c;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card {
+    min-height: 240px;
+    border: 1px solid #292925;
+    border-radius: 16px;
+    background: #171715;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #4a4a43;
+  }
+  .tag {
+    color: #827b72;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  h2 {
+    margin: 0;
+    font-family: "Instrument Serif", serif;
+    font-size: 38px;
+    font-weight: 400;
+  }
+  p {
+    margin: 10px 0 0;
+    color: #aaa39c;
+    line-height: 1.55;
+  }
+  .ready {
+    color: #25d366;
+  }
+  .draft {
+    color: #c9a05c;
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav>
+    <div class="brand"><span class="dot"></span>The Midia</div>
+    <span class="tag">Portfólio de sites</span>
+  </nav>
+
+  <h1>Exemplos de sites por nicho.</h1>
+  <p class="lede">
+    Galerias navegáveis para demonstrar modelos de sites. O portfólio de arquitetura está pronto para venda;
+    os demais nichos ficam organizados em rotas próprias para adaptação posterior.
+  </p>
+
+  <section class="grid">
+    <a class="card" href="arquitetura/">
+      <div>
+        <span class="tag ready">Pronto</span>
+        <h2>Arquitetura</h2>
+        <p>Modelos premium para arquitetos, estúdios e construtoras.</p>
+      </div>
+      <strong>Abrir →</strong>
+    </a>
+    <a class="card" href="advogados/">
+      <div>
+        <span class="tag draft">Rascunho</span>
+        <h2>Advogados</h2>
+        <p>Estrutura inicial para escritórios jurídicos.</p>
+      </div>
+      <strong>Abrir →</strong>
+    </a>
+    <a class="card" href="odonto/">
+      <div>
+        <span class="tag draft">Rascunho</span>
+        <h2>Odonto</h2>
+        <p>Estrutura inicial para clínicas odontológicas.</p>
+      </div>
+      <strong>Abrir →</strong>
+    </a>
+    <a class="card" href="estetica/">
+      <div>
+        <span class="tag draft">Rascunho</span>
+        <h2>Estética</h2>
+        <p>Estrutura inicial para clínicas de estética.</p>
+      </div>
+      <strong>Abrir →</strong>
+    </a>
+    <a class="card" href="imobiliaria/">
+      <div>
+        <span class="tag draft">Rascunho</span>
+        <h2>Imobiliária</h2>
+        <p>Estrutura inicial para imobiliárias e corretores.</p>
+      </div>
+      <strong>Abrir →</strong>
+    </a>
+    <a class="card" href="medicos/">
+      <div>
+        <span class="tag draft">Rascunho</span>
+        <h2>Médicos</h2>
+        <p>Estrutura inicial para médicos e clínicas.</p>
+      </div>
+      <strong>Abrir →</strong>
+    </a>
+  </section>
+</main>
+</body>
+</html>
