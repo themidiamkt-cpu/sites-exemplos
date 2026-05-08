@@ -34,7 +34,8 @@ function TheMidiaArqSite() {
       <section style={c.hero}>
         <div style={c.heroShade} />
         <div style={c.brandPill}>
-          <span>themidia</span><strong>arquitetura.</strong>
+          <img src="../assets/the-midia-logo.png" alt="The Midia Marketing" style={c.brandPillLogo} />
+          <strong>arquitetura.</strong>
         </div>
         <div style={c.heroContent}>
           <h1 style={c.heroTitle}>
@@ -178,7 +179,7 @@ function TheMidiaArqSite() {
 
       <footer style={c.footer}>
         <div style={c.footerBrand}>
-          <div style={c.footerLogo}>themidia<strong>arquitetura.</strong></div>
+          <div style={c.footerLogo}><img src="../assets/the-midia-logo.png" alt="The Midia Marketing" style={c.footerLogoImg} /><strong>arquitetura.</strong></div>
           <p>Interiores com técnica, sensibilidade e direção estética para transformar espaços em experiências possíveis de viver.</p>
           <a style={c.footerCta}>Solicitar análise →</a>
         </div>
@@ -202,6 +203,7 @@ const theMidiaArqStyles = {
   hero: { minHeight: 650, position: 'relative', display: 'grid', placeItems: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&auto=format&fit=crop&q=85)', backgroundSize: 'cover', backgroundPosition: 'center' },
   heroShade: { position: 'absolute', inset: 0, background: 'rgba(55,61,67,.50)' },
   brandPill: { position: 'absolute', top: 112, right: '23%', background: '#2f5f59', color: '#fff', borderRadius: 999, padding: '5px 12px', fontWeight: 800, display: 'flex', gap: 2 },
+  brandPillLogo: { width: 26, height: 26, objectFit: 'contain', background: '#fff', borderRadius: 999, padding: 2, marginRight: 6 },
   heroContent: { position: 'relative', zIndex: 1, textAlign: 'center', color: '#fff', maxWidth: 780, padding: '0 24px', textShadow: '0 3px 18px rgba(0,0,0,.32)' },
   heroTitle: { margin: 0, textTransform: 'uppercase', fontWeight: 900, fontSize: 'clamp(32px, 4vw, 54px)', lineHeight: .95, letterSpacing: '-.03em' },
   heroText: { maxWidth: 560, margin: '22px auto 0', lineHeight: 1.55, color: 'rgba(255,255,255,.86)' },
@@ -249,6 +251,7 @@ const theMidiaArqStyles = {
   footer: { background: '#17231f', color: '#f4f1ea', padding: '64px 46px 34px', display: 'grid', gridTemplateColumns: '1.35fr .8fr .9fr', gap: 54, borderTop: '1px solid rgba(244,241,234,.14)' },
   footerBrand: { maxWidth: 460 },
   footerLogo: { fontSize: 26, fontWeight: 400, marginBottom: 18, color: '#ffffff' },
+  footerLogoImg: { width: 46, height: 46, objectFit: 'contain', background: '#fff', borderRadius: 8, padding: 4, marginRight: 10, verticalAlign: 'middle' },
   footerCta: { display: 'inline-block', marginTop: 22, color: '#d9c7a4', fontWeight: 800, borderBottom: '1px solid rgba(217,199,164,.55)', paddingBottom: 4 },
   footerCol: { display: 'flex', flexDirection: 'column', gap: 10, color: '#c6d0c6' },
 };

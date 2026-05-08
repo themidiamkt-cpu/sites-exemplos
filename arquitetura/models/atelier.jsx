@@ -11,7 +11,7 @@ function AtelierSite() {
     <div style={c.wrap}>
       {/* Nav */}
       <nav style={c.nav}>
-        <div style={c.logo}>The Midia <span style={c.logoItalic}>Arquitetura</span></div>
+        <div style={c.logo}><img src="../assets/the-midia-logo.png" alt="The Midia Marketing" style={c.logoImg} /><span>The Midia <span style={c.logoItalic}>Arquitetura</span></span></div>
         <ul style={c.navList}>
           <li>Trabalhos</li><li>Estúdio</li><li>Processo</li><li>Contato</li>
         </ul>
@@ -130,7 +130,8 @@ const atelierStyles = {
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     padding: '24px 56px', borderBottom: '1px solid #e8e3da',
   },
-  logo: { fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 500, letterSpacing: '-.01em' },
+  logo: { fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 500, letterSpacing: '-.01em', display: 'flex', alignItems: 'center', gap: 10 },
+  logoImg: { width: 34, height: 34, objectFit: 'contain', borderRadius: 6, background: '#fff', padding: 3 },
   logoItalic: { fontStyle: 'italic', fontWeight: 400 },
   navList: {
     listStyle: 'none', display: 'flex', gap: 36, padding: 0, margin: 0,

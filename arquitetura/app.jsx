@@ -131,7 +131,7 @@ function Gallery({ navigate }) {
       <header style={galleryStyles.header}>
         <div style={galleryStyles.brandRow}>
           <div style={galleryStyles.brandMark}>
-            <span style={galleryStyles.brandDot} />
+            <img src="../assets/the-midia-logo.png" alt="The Midia Marketing" style={galleryStyles.brandLogo} />
             <span style={galleryStyles.brandName}>{SELLER_NAME}</span>
           </div>
           <a href={waLink('demonstração')} target="_blank" rel="noopener" style={galleryStyles.headerCta}>
@@ -228,7 +228,7 @@ const galleryStyles = {
   header: { maxWidth: 1280, margin: '0 auto', padding: '32px 32px 64px' },
   brandRow: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 80 },
   brandMark: { display: 'flex', alignItems: 'center', gap: 10 },
-  brandDot: { width: 10, height: 10, borderRadius: 999, background: '#eae6df', display: 'inline-block' },
+  brandLogo: { width: 34, height: 34, objectFit: 'contain', background: '#fff', borderRadius: 6, padding: 3 },
   brandName: { fontFamily: "'Manrope', sans-serif", fontWeight: 600, fontSize: 14, letterSpacing: '.04em' },
   headerCta: {
     color: '#0d0d0c', background: '#eae6df', padding: '10px 18px', borderRadius: 999,

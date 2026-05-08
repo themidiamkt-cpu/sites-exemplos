@@ -29,7 +29,7 @@ function ConstrutoraSite() {
 
       <nav style={c.nav}>
         <div style={c.brand}>
-          <div style={c.brandMark}>TM</div>
+          <img src="../assets/the-midia-logo.png" alt="The Midia Marketing" style={c.brandLogo} />
           <div>
             <div style={c.brandName}>The Midia Arquitetura</div>
             <div style={c.brandTag}>PROJETO · GERENCIAMENTO · EXECUÇÃO</div>
@@ -173,7 +173,7 @@ function ConstrutoraSite() {
         <div style={c.footTop}>
           <div>
             <div style={c.brand}>
-              <div style={c.brandMarkLight}>TM</div>
+              <img src="../assets/the-midia-logo.png" alt="The Midia Marketing" style={c.brandLogoLight} />
               <div>
                 <div style={c.brandNameLight}>The Midia Arquitetura</div>
                 <div style={c.brandTagLight}>PROJETO · GERENCIAMENTO · EXECUÇÃO</div>
@@ -215,6 +215,8 @@ const construtoraStyles = {
 
   nav: { display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: 40, alignItems: 'center', padding: '20px 56px', background: '#fff', borderBottom: '1px solid #e3e0d8' },
   brand: { display: 'flex', alignItems: 'center', gap: 14 },
+  brandLogo: { width: 48, height: 48, objectFit: 'contain', background: '#fff', borderRadius: 6, padding: 4 },
+  brandLogoLight: { width: 48, height: 48, objectFit: 'contain', background: '#fff', borderRadius: 6, padding: 4 },
   brandMark: { width: 44, height: 44, background: '#1f4d3a', color: '#f5f4f0', display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: 16, letterSpacing: '-.02em', borderRadius: 4 },
   brandMarkLight: { width: 44, height: 44, background: '#cfe5d8', color: '#1f4d3a', display: 'grid', placeItems: 'center', fontWeight: 800, fontSize: 16, letterSpacing: '-.02em', borderRadius: 4 },
   brandName: { fontFamily: "'Inter Tight', sans-serif", fontWeight: 700, fontSize: 17, letterSpacing: '-.02em', color: '#1a1f1c' },
