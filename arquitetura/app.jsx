@@ -339,12 +339,80 @@ function PreviewShell({ model, navigate }) {
       </div>
       <div className="preview-frame" style={previewStyles.frame}>
         <Site />
+        <LeadFormSection model={model} />
+        <FaqSection />
       </div>
       <a href={waLink(model.name)} target="_blank" rel="noopener" className="wa-float">
         <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L0 32l8.3-2.2c2.3 1.3 4.9 2 7.6 2h.1c8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.4h-.1c-2.4 0-4.7-.7-6.8-1.9l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.4 21.3 2.6 18.7 2.6 16 2.6 8.6 8.6 2.6 16 2.6S29.4 8.6 29.4 16 23.4 28.8 16 28.8z"/><path d="M22.9 19.2c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2s-1 1.2-1.2 1.5c-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-.7-.6-1.3-1.4-1.4-1.7-.2-.4 0-.6.2-.7.2-.2.4-.4.5-.6.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.9-.3-.7-.7-.7-.9-.7h-.8c-.3 0-.6.1-1 .5s-1.3 1.3-1.3 3.2 1.4 3.7 1.5 3.9c.2.2 2.7 4.2 6.6 5.8.9.4 1.6.6 2.2.8.9.3 1.7.2 2.4.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8 0-.2-.3-.3-.7-.5z"/></svg>
         Quero esse modelo
       </a>
     </div>
+  );
+}
+
+function LeadFormSection({ model }) {
+  return (
+    <section style={leadStyles.wrap}>
+      <div style={leadStyles.inner}>
+        <div style={leadStyles.copy}>
+          <div style={leadStyles.kicker}>PRÓXIMO PASSO</div>
+          <h2 style={leadStyles.title}>Quer adaptar este modelo para o seu escritório?</h2>
+          <p style={leadStyles.text}>
+            Envie seus dados e a gente responde com o melhor caminho para transformar o modelo
+            <strong> {model.name}</strong> em um site com seus projetos, textos, fotos e identidade.
+          </p>
+          <div style={leadStyles.points}>
+            <span>Entrega em até 7 dias</span>
+            <span>WhatsApp e domínio configurados</span>
+            <span>Textos e imagens adaptados</span>
+          </div>
+        </div>
+        <form style={leadStyles.form}>
+          <input style={leadStyles.input} placeholder="Seu nome" />
+          <input style={leadStyles.input} placeholder="WhatsApp" />
+          <input style={leadStyles.input} placeholder="Cidade / região" />
+          <select style={leadStyles.input} defaultValue="">
+            <option value="" disabled>Tipo de projeto</option>
+            <option>Arquitetura residencial</option>
+            <option>Interiores</option>
+            <option>Construtora / engenharia</option>
+            <option>Outro</option>
+          </select>
+          <textarea style={{ ...leadStyles.input, ...leadStyles.textarea }} placeholder="Conte rapidamente o que você precisa" />
+          <a href={waLink(model.name)} target="_blank" rel="noopener" style={leadStyles.button}>
+            Enviar pelo WhatsApp →
+          </a>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function FaqSection() {
+  const faqs = [
+    ['Esse modelo fica com a minha marca?', 'Sim. Adaptamos logo, paleta, textos, fotos, endereço, WhatsApp e seções para o seu escritório.'],
+    ['Preciso ter fotos profissionais?', 'Ajuda muito, mas não é obrigatório. Podemos começar com imagens provisórias e trocar depois pelas suas obras.'],
+    ['O site funciona no celular?', 'Sim. A adaptação considera desktop e mobile, com botões de contato visíveis para facilitar conversão.'],
+    ['Vocês configuram domínio e hospedagem?', 'Sim. Fazemos a publicação, SSL e conexão com domínio para deixar o site pronto para divulgar.'],
+    ['Posso pedir ajustes depois?', 'Sim. A entrega inclui rodada de ajustes para chegar no tom visual e comercial desejado.'],
+  ];
+  return (
+    <section style={faqStyles.wrap}>
+      <div style={faqStyles.inner}>
+        <div>
+          <div style={leadStyles.kicker}>FAQ</div>
+          <h2 style={faqStyles.title}>Dúvidas frequentes</h2>
+        </div>
+        <div style={faqStyles.list}>
+          {faqs.map(([q, a]) => (
+            <article key={q} style={faqStyles.item}>
+              <h3 style={faqStyles.question}>{q}</h3>
+              <p style={faqStyles.answer}>{a}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -383,6 +451,30 @@ const previewStyles = {
     textDecoration: 'none', fontWeight: 700, fontSize: 13, flexShrink: 0,
   },
   frame: { background: '#fff', minHeight: 'calc(100vh - 56px)' },
+};
+
+const leadStyles = {
+  wrap: { background: '#11110f', color: '#f2eee6', padding: '96px 32px', fontFamily: "'Manrope', sans-serif" },
+  inner: { maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 460px', gap: 56, alignItems: 'start' },
+  copy: { maxWidth: 620 },
+  kicker: { fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '.18em', color: '#9b8f7e', marginBottom: 18 },
+  title: { fontFamily: "'Instrument Serif', serif", fontWeight: 400, fontSize: 'clamp(40px, 5vw, 72px)', lineHeight: 1, margin: 0 },
+  text: { color: '#aaa39a', fontSize: 17, lineHeight: 1.65, margin: '24px 0 0' },
+  points: { display: 'grid', gap: 10, marginTop: 28, color: '#d8d0c5', fontSize: 14 },
+  form: { background: '#1d1d1a', border: '1px solid #33332e', borderRadius: 18, padding: 22, display: 'grid', gap: 12 },
+  input: { width: '100%', background: '#121210', border: '1px solid #34342f', borderRadius: 10, padding: '14px 13px', color: '#f2eee6', font: 'inherit', outline: 'none' },
+  textarea: { minHeight: 110, resize: 'vertical' },
+  button: { display: 'block', textAlign: 'center', background: '#25d366', color: '#0d0d0c', borderRadius: 10, padding: '15px 18px', fontWeight: 800, textDecoration: 'none' },
+};
+
+const faqStyles = {
+  wrap: { background: '#f4f0e8', color: '#171817', padding: '88px 32px', fontFamily: "'Manrope', sans-serif" },
+  inner: { maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: '.7fr 1.3fr', gap: 56 },
+  title: { fontFamily: "'Instrument Serif', serif", fontSize: 'clamp(38px, 5vw, 64px)', fontWeight: 400, lineHeight: 1, margin: 0 },
+  list: { display: 'grid', gap: 0, borderTop: '1px solid #d8d0c5' },
+  item: { padding: '24px 0', borderBottom: '1px solid #d8d0c5' },
+  question: { margin: '0 0 8px', fontSize: 18 },
+  answer: { margin: 0, color: '#6f675d', lineHeight: 1.6 },
 };
 
 // Hide dots styling
