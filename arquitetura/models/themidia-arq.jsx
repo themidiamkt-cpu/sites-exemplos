@@ -177,17 +177,20 @@ function TheMidiaArqSite() {
       </section>
 
       <footer style={c.footer}>
-        <div>
+        <div style={c.footerBrand}>
           <div style={c.footerLogo}>themidia<strong>arquitetura.</strong></div>
-          <p>Arquitetura e interiores com técnica, sensibilidade e acolhimento para transformar espaços em experiências únicas.</p>
+          <p>Interiores com técnica, sensibilidade e direção estética para transformar espaços em experiências possíveis de viver.</p>
+          <a style={c.footerCta}>Solicitar análise →</a>
         </div>
-        <div>
+        <div style={c.footerCol}>
           <strong>Navegação</strong>
           <span>Início</span><span>Sobre</span><span>Serviços</span><span>Projetos</span>
         </div>
-        <div>
+        <div style={c.footerCol}>
           <strong>Contato</strong>
-          <span>WhatsApp</span><span>@themidia.arquitetura</span>
+          <span>+55 19 99931-5179</span>
+          <span>comercial@themidiamarketing.com.br</span>
+          <span>@themidia.arquitetura</span>
         </div>
       </footer>
     </div>
@@ -195,56 +198,59 @@ function TheMidiaArqSite() {
 }
 
 const theMidiaArqStyles = {
-  wrap: { background: '#eee9e1', color: '#596071', fontFamily: "'Manrope', sans-serif", fontSize: 14 },
+  wrap: { background: '#f4f1ea', color: '#273432', fontFamily: "'Manrope', sans-serif", fontSize: 14 },
   hero: { minHeight: 650, position: 'relative', display: 'grid', placeItems: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&auto=format&fit=crop&q=85)', backgroundSize: 'cover', backgroundPosition: 'center' },
   heroShade: { position: 'absolute', inset: 0, background: 'rgba(55,61,67,.50)' },
-  brandPill: { position: 'absolute', top: 112, right: '23%', background: '#bf6d47', color: '#fff', borderRadius: 999, padding: '5px 12px', fontWeight: 800, display: 'flex', gap: 2 },
+  brandPill: { position: 'absolute', top: 112, right: '23%', background: '#2f5f59', color: '#fff', borderRadius: 999, padding: '5px 12px', fontWeight: 800, display: 'flex', gap: 2 },
   heroContent: { position: 'relative', zIndex: 1, textAlign: 'center', color: '#fff', maxWidth: 780, padding: '0 24px', textShadow: '0 3px 18px rgba(0,0,0,.32)' },
   heroTitle: { margin: 0, textTransform: 'uppercase', fontWeight: 900, fontSize: 'clamp(32px, 4vw, 54px)', lineHeight: .95, letterSpacing: '-.03em' },
   heroText: { maxWidth: 560, margin: '22px auto 0', lineHeight: 1.55, color: 'rgba(255,255,255,.86)' },
   heroActions: { marginTop: 28, display: 'flex', justifyContent: 'center', gap: 14, flexWrap: 'wrap' },
-  primary: { display: 'inline-block', background: '#bf6d47', color: '#fff', padding: '13px 22px', borderRadius: 6, fontSize: 12, fontWeight: 900, textTransform: 'uppercase' },
-  whiteBtn: { display: 'inline-block', background: '#fff', color: '#596071', padding: '13px 22px', borderRadius: 6, fontSize: 12, fontWeight: 900 },
+  primary: { display: 'inline-block', background: '#2f5f59', color: '#fff', padding: '13px 22px', borderRadius: 6, fontSize: 12, fontWeight: 900, textTransform: 'uppercase' },
+  whiteBtn: { display: 'inline-block', background: '#fff', color: '#273432', padding: '13px 22px', borderRadius: 6, fontSize: 12, fontWeight: 900 },
   problem: { maxWidth: 1160, margin: '0 auto', padding: '74px 28px 86px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 70, alignItems: 'center' },
-  kicker: { color: '#bf6d47', fontSize: 11, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.04em', marginBottom: 12 },
-  problemTitle: { margin: 0, textTransform: 'uppercase', fontSize: 'clamp(36px, 4vw, 58px)', lineHeight: .98, fontWeight: 300, color: '#596071' },
-  problemLead: { color: '#596071', fontWeight: 700, lineHeight: 1.55, marginTop: 22 },
+  kicker: { color: '#2f5f59', fontSize: 11, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '.04em', marginBottom: 12 },
+  problemTitle: { margin: 0, textTransform: 'uppercase', fontSize: 'clamp(36px, 4vw, 58px)', lineHeight: .98, fontWeight: 300, color: '#273432' },
+  problemLead: { color: '#465653', fontWeight: 700, lineHeight: 1.55, marginTop: 22 },
   painList: { display: 'grid', gap: 16, marginTop: 28 },
   painItem: { display: 'grid', gridTemplateColumns: '26px 1fr', gap: 8 },
-  painIcon: { color: '#bf6d47', fontWeight: 900 },
-  answer: { color: '#bf6d47', fontWeight: 900, marginTop: 28 },
-  problemBtn: { display: 'inline-block', marginTop: 18, background: '#bf6d47', color: '#fff', padding: '13px 18px', borderRadius: 6, fontSize: 12, fontWeight: 900, textTransform: 'uppercase' },
+  painIcon: { color: '#2f5f59', fontWeight: 900 },
+  answer: { color: '#2f5f59', fontWeight: 900, marginTop: 28 },
+  problemBtn: { display: 'inline-block', marginTop: 18, background: '#2f5f59', color: '#fff', padding: '13px 18px', borderRadius: 6, fontSize: 12, fontWeight: 900, textTransform: 'uppercase' },
   problemMedia: { position: 'relative' },
   problemImg: { width: '100%', borderRadius: 16, display: 'block', boxShadow: '0 18px 40px rgba(70,56,45,.18)' },
-  quoteCard: { position: 'absolute', left: -24, bottom: -24, width: 260, background: '#fff', padding: 18, borderRadius: 12, boxShadow: '0 18px 40px rgba(70,56,45,.18)', color: '#596071' },
-  services: { background: '#e1dbd1', padding: '70px 28px 86px' },
+  quoteCard: { position: 'absolute', left: -24, bottom: -24, width: 260, background: '#fff', padding: 18, borderRadius: 12, boxShadow: '0 18px 40px rgba(39,52,50,.16)', color: '#465653' },
+  services: { background: '#e8e2d7', padding: '70px 28px 86px' },
   centerHead: { textAlign: 'center', maxWidth: 760, margin: '0 auto 48px' },
-  sectionTitle: { margin: 0, textTransform: 'uppercase', fontSize: 'clamp(34px, 4vw, 58px)', lineHeight: 1, fontWeight: 300, color: '#596071' },
+  sectionTitle: { margin: 0, textTransform: 'uppercase', fontSize: 'clamp(34px, 4vw, 58px)', lineHeight: 1, fontWeight: 300, color: '#273432' },
   servicesGrid: { maxWidth: 980, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 },
   serviceCard: { display: 'grid', gap: 10 },
   serviceImageWrap: { position: 'relative', overflow: 'hidden', borderRadius: 10, minHeight: 310 },
   serviceImg: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
-  badge: { position: 'absolute', top: 10, right: 10, background: '#bf6d47', color: '#fff', borderRadius: 999, padding: '7px 11px', fontSize: 10, fontWeight: 900 },
+  badge: { position: 'absolute', top: 10, right: 10, background: '#2f5f59', color: '#fff', borderRadius: 999, padding: '7px 11px', fontSize: 10, fontWeight: 900 },
   serviceName: { position: 'absolute', left: 14, bottom: 14, color: '#fff', textTransform: 'uppercase', fontSize: 13, textShadow: '0 3px 12px rgba(0,0,0,.45)' },
-  projects: { background: '#f2eee8', padding: '78px 0 70px' },
+  projects: { background: '#f4f1ea', padding: '78px 0 70px' },
   projectsHead: { maxWidth: 980, margin: '0 auto 42px', padding: '0 28px' },
   projectGrid: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0 },
   projectItem: { minHeight: 360, overflow: 'hidden' },
   projectImg: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' },
   center: { textAlign: 'center', marginTop: 32 },
-  about: { background: '#e1dbd1', padding: '82px 28px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 70, alignItems: 'center' },
+  about: { background: '#dfe7df', padding: '82px 28px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 70, alignItems: 'center' },
   aboutText: { maxWidth: 620, justifySelf: 'end' },
-  aboutQuote: { background: '#f8f5ef', margin: '28px 0', padding: 24, borderRadius: 12, color: '#9a6a55', fontStyle: 'italic' },
-  stats: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, color: '#bf6d47', textAlign: 'center' },
+  aboutQuote: { background: '#f8f5ef', margin: '28px 0', padding: 24, borderRadius: 12, color: '#2f5f59', fontStyle: 'italic' },
+  stats: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, color: '#2f5f59', textAlign: 'center' },
   aboutPhotos: { display: 'grid', gridTemplateColumns: '1.05fr .95fr', gap: 18, maxWidth: 560 },
   aboutBig: { width: '100%', height: 420, objectFit: 'cover', borderRadius: 14 },
   aboutSmallGrid: { display: 'grid', gap: 18 },
-  testimonials: { background: '#f2eee8', padding: '72px 28px', display: 'grid', gridTemplateColumns: '.8fr 1.2fr', gap: 50, maxWidth: 1160, margin: '0 auto' },
+  testimonials: { background: '#f4f1ea', padding: '72px 28px', display: 'grid', gridTemplateColumns: '.8fr 1.2fr', gap: 50, maxWidth: 1160, margin: '0 auto' },
   reviewCards: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 },
   review: { background: '#fff', borderRadius: 12, padding: 22, boxShadow: '0 12px 30px rgba(70,56,45,.08)' },
   stars: { color: '#f2b544', margin: '8px 0' },
-  footer: { background: '#a95335', color: '#fff', padding: '56px 28px', display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: 42 },
-  footerLogo: { fontSize: 24, fontWeight: 400, marginBottom: 18 },
+  footer: { background: '#17231f', color: '#f4f1ea', padding: '64px 46px 34px', display: 'grid', gridTemplateColumns: '1.35fr .8fr .9fr', gap: 54, borderTop: '1px solid rgba(244,241,234,.14)' },
+  footerBrand: { maxWidth: 460 },
+  footerLogo: { fontSize: 26, fontWeight: 400, marginBottom: 18, color: '#ffffff' },
+  footerCta: { display: 'inline-block', marginTop: 22, color: '#d9c7a4', fontWeight: 800, borderBottom: '1px solid rgba(217,199,164,.55)', paddingBottom: 4 },
+  footerCol: { display: 'flex', flexDirection: 'column', gap: 10, color: '#c6d0c6' },
 };
 
 window.TheMidiaArqSite = TheMidiaArqSite;
