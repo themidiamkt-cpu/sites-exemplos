@@ -338,9 +338,7 @@ function PreviewShell({ model, navigate }) {
         </a>
       </div>
       <div className="preview-frame" style={previewStyles.frame}>
-        <Site />
-        <LeadFormSection model={model} />
-        <FaqSection />
+        {renderSiteWithInquiry(Site, model)}
       </div>
       <a href={waLink(model.name)} target="_blank" rel="noopener" className="wa-float">
         <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L0 32l8.3-2.2c2.3 1.3 4.9 2 7.6 2h.1c8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.4h-.1c-2.4 0-4.7-.7-6.8-1.9l-.5-.3-5 1.3 1.3-4.9-.3-.5C3.4 21.3 2.6 18.7 2.6 16 2.6 8.6 8.6 2.6 16 2.6S29.4 8.6 29.4 16 23.4 28.8 16 28.8z"/><path d="M22.9 19.2c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2s-1 1.2-1.2 1.5c-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-.7-.6-1.3-1.4-1.4-1.7-.2-.4 0-.6.2-.7.2-.2.4-.4.5-.6.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.9-.3-.7-.7-.7-.9-.7h-.8c-.3 0-.6.1-1 .5s-1.3 1.3-1.3 3.2 1.4 3.7 1.5 3.9c.2.2 2.7 4.2 6.6 5.8.9.4 1.6.6 2.2.8.9.3 1.7.2 2.4.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8 0-.2-.3-.3-.7-.5z"/></svg>
@@ -350,36 +348,96 @@ function PreviewShell({ model, navigate }) {
   );
 }
 
-function LeadFormSection({ model }) {
+function renderSiteWithInquiry(Site, model) {
+  const siteElement = Site ? Site({}) : null;
+  const resolved = resolveSiteElement(siteElement);
+  if (!React.isValidElement(resolved)) {
+    return (
+      <>
+        {siteElement}
+        <ProjectInquirySections model={model} />
+      </>
+    );
+  }
+
+  const children = React.Children.toArray(resolved.props.children);
+  if (!children.length) {
+    return (
+      <>
+        {resolved}
+        <ProjectInquirySections model={model} />
+      </>
+    );
+  }
+
+  let insertAt = children.length;
+  for (let i = children.length - 1; i >= 0; i -= 1) {
+    const child = children[i];
+    if (React.isValidElement(child) && child.type !== 'style') {
+      insertAt = i;
+      break;
+    }
+  }
+
+  const nextChildren = [
+    ...children.slice(0, insertAt),
+    <ProjectInquirySections key="project-inquiry" model={model} />,
+    ...children.slice(insertAt),
+  ];
+
+  return React.cloneElement(resolved, resolved.props, nextChildren);
+}
+
+function resolveSiteElement(element) {
+  let current = element;
+  let guard = 0;
+  while (React.isValidElement(current) && typeof current.type === 'function' && guard < 5) {
+    current = current.type(current.props || {});
+    guard += 1;
+  }
+  return current;
+}
+
+function ProjectInquirySections({ model }) {
   return (
-    <section style={leadStyles.wrap}>
+    <>
+      <LeadFormSection model={model} />
+      <FaqSection model={model} />
+    </>
+  );
+}
+
+function LeadFormSection({ model }) {
+  const t = getInquiryTheme(model);
+  return (
+    <section style={{ ...leadStyles.wrap, background: t.formBg, color: t.fg, borderTop: `1px solid ${t.line}`, borderBottom: `1px solid ${t.line}` }}>
       <div style={leadStyles.inner}>
         <div style={leadStyles.copy}>
-          <div style={leadStyles.kicker}>PRÓXIMO PASSO</div>
+          <div style={{ ...leadStyles.kicker, color: t.accent }}>PRÓXIMO PASSO</div>
           <h2 style={leadStyles.title}>Quer começar seu projeto com a gente?</h2>
-          <p style={leadStyles.text}>
+          <p style={{ ...leadStyles.text, color: t.muted }}>
             Conte um pouco sobre seu imóvel, sua rotina e o que você quer transformar.
             A equipe da The Midia Arquitetura avalia o momento do projeto e indica o melhor caminho para começar.
           </p>
-          <div style={leadStyles.points}>
+          <div style={{ ...leadStyles.points, color: t.soft }}>
             <span>Arquitetura residencial, interiores e reformas</span>
             <span>Atendimento online ou presencial</span>
             <span>Primeira conversa para entender escopo, prazo e investimento</span>
           </div>
         </div>
-        <form style={leadStyles.form}>
-          <input style={leadStyles.input} placeholder="Seu nome" />
-          <input style={leadStyles.input} placeholder="WhatsApp" />
-          <input style={leadStyles.input} placeholder="Cidade do imóvel" />
-          <select style={leadStyles.input} defaultValue="">
+        <form style={{ ...leadStyles.form, background: t.card, borderColor: t.line }}>
+          <input style={{ ...leadStyles.input, background: t.input, borderColor: t.line, color: t.fg }} placeholder="Seu nome" />
+          <input style={{ ...leadStyles.input, background: t.input, borderColor: t.line, color: t.fg }} placeholder="WhatsApp" />
+          <input style={{ ...leadStyles.input, background: t.input, borderColor: t.line, color: t.fg }} placeholder="Cidade do imóvel" />
+          <select style={{ ...leadStyles.input, background: t.input, borderColor: t.line, color: t.fg }} defaultValue="">
             <option value="" disabled>O que você deseja fazer?</option>
             <option>Construir uma casa</option>
             <option>Reformar um imóvel</option>
             <option>Projeto de interiores</option>
             <option>Projeto comercial</option>
           </select>
-          <textarea style={{ ...leadStyles.input, ...leadStyles.textarea }} placeholder="Conte sobre o imóvel, metragem aproximada, prazo e o que você quer mudar" />
-          <a href={waLink(model.name)} target="_blank" rel="noopener" style={leadStyles.button}>
+          <textarea style={{ ...leadStyles.input, ...leadStyles.textarea, background: t.input, borderColor: t.line, color: t.fg }} placeholder="Conte sobre o imóvel, metragem aproximada, prazo e o que você quer mudar" />
+          <a href={waLink(model.name)} target="_blank" rel="noopener" style={{ ...leadStyles.button, background: t.accent, color: t.buttonText }}>
             Agendar primeira conversa →
           </a>
         </form>
@@ -388,7 +446,8 @@ function LeadFormSection({ model }) {
   );
 }
 
-function FaqSection() {
+function FaqSection({ model }) {
+  const t = getInquiryTheme(model);
   const faqs = [
     ['Em que momento devo contratar um arquiteto?', 'O ideal é chamar antes de comprar materiais, contratar mão de obra ou definir soluções sozinho. Assim o projeto nasce com coerência, orçamento e menos retrabalho.'],
     ['Vocês fazem projeto completo ou só interiores?', 'Atuamos em arquitetura residencial, reformas, interiores, marcenaria, iluminação e acompanhamento conforme o escopo de cada cliente.'],
@@ -397,23 +456,65 @@ function FaqSection() {
     ['Vocês acompanham a obra?', 'Sim, quando contratado no escopo. O acompanhamento ajuda a preservar o projeto, resolver dúvidas de execução e orientar fornecedores.'],
   ];
   return (
-    <section style={faqStyles.wrap}>
+    <section style={{ ...faqStyles.wrap, background: t.faqBg, color: t.faqFg }}>
       <div style={faqStyles.inner}>
         <div>
-          <div style={leadStyles.kicker}>FAQ</div>
+          <div style={{ ...leadStyles.kicker, color: t.accent }}>FAQ</div>
           <h2 style={faqStyles.title}>Dúvidas frequentes</h2>
         </div>
-        <div style={faqStyles.list}>
+        <div style={{ ...faqStyles.list, borderColor: t.faqLine }}>
           {faqs.map(([q, a]) => (
-            <article key={q} style={faqStyles.item}>
+            <article key={q} style={{ ...faqStyles.item, borderColor: t.faqLine }}>
               <h3 style={faqStyles.question}>{q}</h3>
-              <p style={faqStyles.answer}>{a}</p>
+              <p style={{ ...faqStyles.answer, color: t.faqMuted }}>{a}</p>
             </article>
           ))}
         </div>
       </div>
     </section>
   );
+}
+
+function getInquiryTheme(model) {
+  const dark = ['forma', 'premium', 'themidia-arq'].includes(model.id);
+  if (model.id === 'estudio') {
+    return {
+      formBg: '#ffffff', faqBg: '#ffffff', fg: '#0a0a0a', faqFg: '#0a0a0a',
+      muted: '#5a5a5a', soft: '#2a2a2a', card: '#f4f4f2', input: '#ffffff',
+      line: '#0a0a0a', faqLine: '#0a0a0a', faqMuted: '#5a5a5a',
+      accent: '#FF3B00', buttonText: '#ffffff',
+    };
+  }
+  if (model.id === 'casa') {
+    return {
+      formBg: '#f4ede4', faqBg: '#efe3d4', fg: '#2a1f17', faqFg: '#2a1f17',
+      muted: '#6e5745', soft: '#594434', card: '#fff8ef', input: '#fffaf4',
+      line: '#d8c5b1', faqLine: '#d8c5b1', faqMuted: '#6e5745',
+      accent: '#c2785a', buttonText: '#fffaf4',
+    };
+  }
+  if (model.id === 'themidia-arq') {
+    return {
+      formBg: '#dfe7df', faqBg: '#f4f1ea', fg: '#273432', faqFg: '#273432',
+      muted: '#465653', soft: '#384a46', card: '#f8f5ef', input: '#ffffff',
+      line: '#c6d0c6', faqLine: '#c6d0c6', faqMuted: '#465653',
+      accent: '#2f5f59', buttonText: '#ffffff',
+    };
+  }
+  if (dark) {
+    return {
+      formBg: '#10100e', faqBg: '#181712', fg: '#f3eee0', faqFg: '#f3eee0',
+      muted: '#b8b0a4', soft: '#d8d0c5', card: '#1d1c18', input: '#11110f',
+      line: '#333029', faqLine: '#333029', faqMuted: '#b8b0a4',
+      accent: model.accent || '#c9a05c', buttonText: '#0e0e0c',
+    };
+  }
+  return {
+    formBg: model.bg || '#faf8f5', faqBg: '#f4f0e8', fg: '#171817', faqFg: '#171817',
+    muted: '#6f675d', soft: '#3a3a37', card: '#ffffff', input: '#fbfaf7',
+    line: '#d8d0c5', faqLine: '#d8d0c5', faqMuted: '#6f675d',
+    accent: model.accent || '#1a1a1a', buttonText: '#ffffff',
+  };
 }
 
 const previewStyles = {
