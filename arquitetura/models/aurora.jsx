@@ -12,6 +12,16 @@ function AuroraSite() {
   return (
     <div style={c.page}>
       <header style={c.hero}>
+        <video
+          style={c.heroVideo}
+          src="https://videos.pexels.com/video-files/7578554/7578554-uhd_3840_2160_30fps.mp4"
+          poster="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1800&auto=format&fit=crop&q=85"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div style={c.heroShade}></div>
         <nav style={c.nav}>
           <div style={c.brand}>
             <img src={`${assetBase}the-midia-logo.png`} alt="The Midia Marketing" style={c.logo} />
@@ -222,14 +232,15 @@ const c = {
   page: { background: '#ecebea', color: '#222', fontFamily: "'Manrope', sans-serif", lineHeight: 1.5 },
   hero: {
     minHeight: 620, position: 'relative', color: '#fff',
-    backgroundImage: 'linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.58)), url(https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1800&auto=format&fit=crop&q=85)',
-    backgroundSize: 'cover', backgroundPosition: 'center',
+    background: '#222', overflow: 'hidden',
   },
-  nav: { height: 78, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 9vw', fontSize: 13 },
+  heroVideo: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 },
+  heroShade: { position: 'absolute', inset: 0, background: 'linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.54)), radial-gradient(circle at 50% 45%, rgba(0,0,0,.08), rgba(0,0,0,.42))', zIndex: 1 },
+  nav: { height: 104, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '26px 9vw 0', fontSize: 13, position: 'relative', zIndex: 2 },
   brand: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, textTransform: 'uppercase', letterSpacing: 1.8, fontSize: 11 },
-  logo: { width: 54, height: 54, objectFit: 'contain', filter: 'brightness(0) invert(1)' },
+  logo: { width: 64, height: 64, objectFit: 'contain', background: '#fff', borderRadius: 2, padding: 6, boxShadow: '0 12px 30px rgba(0,0,0,.18)' },
   links: { display: 'flex', gap: 28, color: '#f3f3f3' },
-  heroCenter: { minHeight: 480, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '40px 24px' },
+  heroCenter: { minHeight: 500, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '40px 24px 80px', position: 'relative', zIndex: 2 },
   kicker: { margin: 0, fontSize: 12, letterSpacing: 3, textTransform: 'uppercase', color: '#d8d8d8' },
   heroTitle: { margin: '20px 0 8px', fontSize: 'clamp(44px, 7vw, 86px)', fontWeight: 300, letterSpacing: 1, textTransform: 'uppercase' },
   heroLine: { width: 150, height: 1, background: '#fff', display: 'block', marginBottom: 16 },
