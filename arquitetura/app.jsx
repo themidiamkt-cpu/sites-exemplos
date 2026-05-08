@@ -36,7 +36,7 @@ const MODELS = [
     id: 'casa',
     name: 'Casa & Cor',
     tag: 'Residencial · Premium',
-    desc: 'Tons quentes, terracota e creme. Foco em fotografia de obra concluída e narrativa de cliente.',
+    desc: 'Tons quentes e naturais. Foco em fotografia de obra concluída e narrativa de cliente.',
     price: 'R$ 1.397',
     fakeUrl: 'casaecor.arq.br',
     accent: '#c2785a',
@@ -92,8 +92,8 @@ const MODELS = [
     Component: () => window.ConstrutoraSite ? <window.ConstrutoraSite /> : null,
   },
   {
-    id: 'terracota',
-    name: 'Terracota Autoral',
+    id: 'themidia-arq',
+    name: 'The Midia Arq',
     tag: 'Interiores · Pacotes',
     desc: 'Inspirado em páginas de interiores com pacotes, galeria sensorial e CTA para análise do ambiente.',
     badge: 'Novo',
@@ -101,7 +101,7 @@ const MODELS = [
     accent: '#a55f45',
     bg: '#2b1b14',
     cover: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&auto=format&fit=crop&q=80',
-    Component: () => window.TerracotaSite ? <window.TerracotaSite /> : null,
+    Component: () => window.TheMidiaArqSite ? <window.TheMidiaArqSite /> : null,
   },
 ];
 

@@ -1,6 +1,6 @@
-/* Terracota Autoral — interiores sofisticados, pacotes e galeria sensorial */
-function TerracotaSite() {
-  const c = terracotaStyles;
+/* The Midia Arq — interiores sofisticados, pacotes e galeria sensorial */
+function TheMidiaArqSite() {
+  const c = theMidiaArqStyles;
   const packages = [
     {
       name: 'Direção de Ambiente',
@@ -160,7 +160,7 @@ function TerracotaSite() {
   );
 }
 
-const terracotaStyles = {
+const theMidiaArqStyles = {
   wrap: { background: '#2b1b14', color: '#f5eadf', fontFamily: "'Manrope', sans-serif", fontSize: 14 },
   nav: { display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: 32, alignItems: 'center', padding: '24px 46px', borderBottom: '1px solid rgba(245,234,223,.16)' },
   logo: { display: 'flex', alignItems: 'center', gap: 12, fontWeight: 800, lineHeight: 1.1 },
@@ -203,4 +203,4 @@ const terracotaStyles = {
   footer: { padding: '32px 46px', borderTop: '1px solid rgba(245,234,223,.16)', display: 'flex', justifyContent: 'space-between', gap: 18, color: '#d0b9a8' },
 };
 
-window.TerracotaSite = TerracotaSite;
+window.TheMidiaArqSite = TheMidiaArqSite;
