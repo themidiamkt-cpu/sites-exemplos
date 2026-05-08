@@ -125,12 +125,7 @@ function AuroraSite() {
           <span>Atendimento presencial e online</span>
         </div>
         <div style={c.mapBox}>
-          <div style={{ ...c.state, top: '18%', left: '46%', width: 84, height: 62 }}>PA</div>
-          <div style={{ ...c.state, top: '32%', left: '38%', width: 72, height: 54 }}>TO</div>
-          <div style={{ ...c.stateActive, top: '44%', left: '50%', width: 94, height: 74 }}>GO</div>
-          <div style={{ ...c.state, top: '58%', left: '56%', width: 82, height: 58 }}>MG</div>
-          <div style={{ ...c.stateDark, top: '70%', left: '60%', width: 64, height: 50 }}>SP</div>
-          <div style={{ ...c.state, top: '80%', left: '53%', width: 58, height: 44 }}>PR</div>
+          <BrazilCoverageMap />
         </div>
         <strong style={c.mapCaption}>São Paulo · Paraná · Goiás · Minas Gerais</strong>
       </section>
@@ -184,6 +179,45 @@ function AuroraSite() {
   );
 }
 
+function BrazilCoverageMap() {
+  const markers = [
+    ['GO', 230, 238, '#9b9b9b'],
+    ['MG', 274, 286, '#9b9b9b'],
+    ['SP', 247, 332, '#4d4d4d'],
+    ['PR', 218, 370, '#9b9b9b'],
+  ];
+
+  return (
+    <svg viewBox="0 0 430 500" role="img" aria-label="Mapa do Brasil com estados atendidos" style={c.brazilMap}>
+      <defs>
+        <filter id="auroraMapShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="16" stdDeviation="16" floodColor="#000" floodOpacity=".08" />
+        </filter>
+      </defs>
+      <path
+        d="M215 20 258 35 285 24 326 48 344 89 382 111 360 153 385 198 356 226 360 268 332 289 320 332 286 350 278 390 238 408 216 459 175 432 136 441 119 397 83 374 96 330 72 291 91 252 65 208 88 166 70 124 105 93 152 83 181 45Z"
+        fill="#d7d7d7"
+        stroke="#f2f2f2"
+        strokeWidth="3"
+        filter="url(#auroraMapShadow)"
+      />
+      <path d="M181 45 207 126 176 183 91 252 65 208 88 166 70 124 105 93 152 83Z" fill="#cfcfcf" />
+      <path d="M207 126 258 35 285 24 326 48 344 89 315 145 252 155Z" fill="#d0d0d0" />
+      <path d="M176 183 252 155 315 145 360 153 385 198 356 226 289 217 229 238Z" fill="#c8c8c8" />
+      <path d="M229 238 289 217 356 226 360 268 332 289 284 300 238 287Z" fill="#b8b8b8" />
+      <path d="M238 287 284 300 332 289 320 332 286 350 246 335Z" fill="#cfcfcf" />
+      <path d="M246 335 286 350 278 390 238 408 211 380Z" fill="#4d4d4d" />
+      <path d="M211 380 238 408 216 459 175 432 136 441 119 397 158 371Z" fill="#d2d2d2" />
+      {markers.map(([label, x, y, color]) => (
+        <g key={label}>
+          <circle cx={x} cy={y} r="18" fill={color} stroke="#f7f7f7" strokeWidth="4" />
+          <text x={x} y={y + 5} textAnchor="middle" style={c.mapLabel}>{label}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 const c = {
   page: { background: '#ecebea', color: '#222', fontFamily: "'Manrope', sans-serif", lineHeight: 1.5 },
   hero: {
@@ -224,10 +258,9 @@ const c = {
   serviceRowReverse: { gridTemplateColumns: '1fr 260px', marginLeft: '10%' },
   serviceImg: { width: 260, height: 260, borderRadius: '50%', objectFit: 'cover', border: '5px solid #ecebea', outline: '2px solid #8e8e8e' },
   mapSection: { padding: '30px 24px 70px', textAlign: 'center' },
-  mapBox: { width: 380, height: 360, margin: '0 auto 18px', position: 'relative' },
-  state: { position: 'absolute', background: '#d5d5d5', border: '1px solid #f0f0f0', display: 'grid', placeItems: 'center', color: '#888', fontSize: 12, clipPath: 'polygon(12% 0,100% 10%,84% 92%,18% 100%,0 35%)' },
-  stateActive: { position: 'absolute', background: '#a9a9a9', border: '1px solid #f0f0f0', display: 'grid', placeItems: 'center', color: '#fff', fontSize: 12, clipPath: 'polygon(12% 0,100% 10%,84% 92%,18% 100%,0 35%)' },
-  stateDark: { position: 'absolute', background: '#4d4d4d', border: '1px solid #f0f0f0', display: 'grid', placeItems: 'center', color: '#fff', fontSize: 12, clipPath: 'polygon(12% 0,100% 10%,84% 92%,18% 100%,0 35%)' },
+  mapBox: { width: 'min(440px, 92vw)', margin: '0 auto 22px', position: 'relative' },
+  brazilMap: { width: '100%', height: 'auto', display: 'block' },
+  mapLabel: { fontFamily: "'Manrope', sans-serif", fontWeight: 800, fontSize: 13, fill: '#fff' },
   mapCaption: { display: 'block', color: '#333' },
   feedbacks: { padding: '40px 24px 70px' },
   cards: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: 18, maxWidth: 1120, margin: '0 auto' },
