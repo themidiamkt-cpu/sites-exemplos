@@ -46,8 +46,8 @@
     .mobile-site-menu {
       display: block;
       position: absolute;
-      top: 24px;
-      right: 20px;
+      top: var(--mobile-menu-top, 24px);
+      right: var(--mobile-menu-right, 20px);
       z-index: 10050;
       font-family: 'Manrope', system-ui, sans-serif;
     }
@@ -55,9 +55,9 @@
       width: 46px;
       height: 46px;
       border-radius: 999px;
-      background: rgba(17,17,15,.92);
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 12px 32px rgba(0,0,0,.22);
+      background: var(--mobile-menu-bg, #11110f);
+      border: 1px solid var(--mobile-menu-border, rgba(255,255,255,.18));
+      box-shadow: 0 12px 32px rgba(0,0,0,.18);
       display: grid;
       place-content: center;
       gap: 5px;
@@ -70,7 +70,7 @@
       width: 19px;
       height: 2px;
       border-radius: 999px;
-      background: #fff;
+      background: var(--mobile-menu-fg, #fff);
       display: block;
     }
     .mobile-site-menu nav {
@@ -80,21 +80,21 @@
       min-width: 210px;
       padding: 10px;
       border-radius: 16px;
-      background: rgba(17,17,15,.96);
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 20px 48px rgba(0,0,0,.28);
+      background: var(--mobile-menu-panel-bg, #11110f);
+      border: 1px solid var(--mobile-menu-border, rgba(255,255,255,.14));
+      box-shadow: 0 20px 48px rgba(0,0,0,.22);
       display: grid;
       gap: 2px;
     }
     .mobile-site-menu nav a {
-      color: #f7f3ee;
+      color: var(--mobile-menu-panel-fg, #f7f3ee);
       text-decoration: none;
       font-size: 14px;
       font-weight: 700;
       padding: 12px 13px;
       border-radius: 10px;
     }
-    .mobile-site-menu nav a:hover { background: rgba(255,255,255,.08); }
+    .mobile-site-menu nav a:hover { background: color-mix(in srgb, var(--mobile-menu-panel-fg, #f7f3ee) 10%, transparent); }
     .preview-frame [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
     .preview-frame [style*="display: flex"] { flex-wrap: wrap !important; }
     .preview-frame [style*="padding: 120px"],

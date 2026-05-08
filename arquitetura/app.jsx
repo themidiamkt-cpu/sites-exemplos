@@ -363,7 +363,7 @@ function PreviewShell({ model, navigate }) {
 
 function MobileSiteMenu({ model }) {
   return (
-    <details className="mobile-site-menu">
+    <details className={`mobile-site-menu mobile-site-menu-${model.id}`} style={getMobileMenuStyle(model)}>
       <summary aria-label="Abrir menu">
         <span></span>
         <span></span>
@@ -378,6 +378,30 @@ function MobileSiteMenu({ model }) {
       </nav>
     </details>
   );
+}
+
+function getMobileMenuStyle(model) {
+  const themes = {
+    atelier: { top: '24px', right: '22px', bg: '#1a1a1a', fg: '#faf8f5', panel: '#faf8f5', panelFg: '#1a1a1a', border: '#d8d2c6' },
+    estudio: { top: '18px', right: '20px', bg: '#0a0a0a', fg: '#ffffff', panel: '#ffffff', panelFg: '#0a0a0a', border: '#0a0a0a' },
+    casa: { top: '31px', right: '24px', bg: '#c2785a', fg: '#fff8ef', panel: '#fff8ef', panelFg: '#2a1f17', border: '#d8c5b1' },
+    forma: { top: '22px', right: '20px', bg: '#d8ff3c', fg: '#0a0a0a', panel: '#0a0a0a', panelFg: '#f5f5f5', border: '#d8ff3c' },
+    interiores: { top: '28px', right: '22px', bg: '#97a08a', fg: '#f7f3ee', panel: '#f7f3ee', panelFg: '#4a4541', border: '#d7d0c7' },
+    premium: { top: '26px', right: '22px', bg: '#c9a05c', fg: '#0e0e0c', panel: '#1a1a17', panelFg: '#f3eee0', border: '#c9a05c' },
+    construtora: { top: '104px', right: '26px', bg: '#1f4d3a', fg: '#f5f4f0', panel: '#ffffff', panelFg: '#1f4d3a', border: '#d7e3db' },
+    aurora: { top: '24px', right: '22px', bg: '#2a2a2a', fg: '#ffffff', panel: '#f3f3f3', panelFg: '#333333', border: '#9c9c9c' },
+    'themidia-arq': { top: '24px', right: '22px', bg: '#2f5f59', fg: '#ffffff', panel: '#f4f1ea', panelFg: '#273432', border: '#c6d0c6' },
+  };
+  const t = themes[model.id] || themes.atelier;
+  return {
+    '--mobile-menu-top': t.top,
+    '--mobile-menu-right': t.right,
+    '--mobile-menu-bg': t.bg,
+    '--mobile-menu-fg': t.fg,
+    '--mobile-menu-panel-bg': t.panel,
+    '--mobile-menu-panel-fg': t.panelFg,
+    '--mobile-menu-border': t.border,
+  };
 }
 
 function renderSiteWithInquiry(Site, model) {
