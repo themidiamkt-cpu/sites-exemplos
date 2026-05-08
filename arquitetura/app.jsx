@@ -356,31 +356,31 @@ function LeadFormSection({ model }) {
       <div style={leadStyles.inner}>
         <div style={leadStyles.copy}>
           <div style={leadStyles.kicker}>PRÓXIMO PASSO</div>
-          <h2 style={leadStyles.title}>Quer adaptar este modelo para o seu escritório?</h2>
+          <h2 style={leadStyles.title}>Quer começar seu projeto com a gente?</h2>
           <p style={leadStyles.text}>
-            Envie seus dados e a gente responde com o melhor caminho para transformar o modelo
-            <strong> {model.name}</strong> em um site com seus projetos, textos, fotos e identidade.
+            Conte um pouco sobre seu imóvel, sua rotina e o que você quer transformar.
+            A equipe da The Midia Arquitetura avalia o momento do projeto e indica o melhor caminho para começar.
           </p>
           <div style={leadStyles.points}>
-            <span>Entrega em até 7 dias</span>
-            <span>WhatsApp e domínio configurados</span>
-            <span>Textos e imagens adaptados</span>
+            <span>Arquitetura residencial, interiores e reformas</span>
+            <span>Atendimento online ou presencial</span>
+            <span>Primeira conversa para entender escopo, prazo e investimento</span>
           </div>
         </div>
         <form style={leadStyles.form}>
           <input style={leadStyles.input} placeholder="Seu nome" />
           <input style={leadStyles.input} placeholder="WhatsApp" />
-          <input style={leadStyles.input} placeholder="Cidade / região" />
+          <input style={leadStyles.input} placeholder="Cidade do imóvel" />
           <select style={leadStyles.input} defaultValue="">
-            <option value="" disabled>Tipo de projeto</option>
-            <option>Arquitetura residencial</option>
-            <option>Interiores</option>
-            <option>Construtora / engenharia</option>
-            <option>Outro</option>
+            <option value="" disabled>O que você deseja fazer?</option>
+            <option>Construir uma casa</option>
+            <option>Reformar um imóvel</option>
+            <option>Projeto de interiores</option>
+            <option>Projeto comercial</option>
           </select>
-          <textarea style={{ ...leadStyles.input, ...leadStyles.textarea }} placeholder="Conte rapidamente o que você precisa" />
+          <textarea style={{ ...leadStyles.input, ...leadStyles.textarea }} placeholder="Conte sobre o imóvel, metragem aproximada, prazo e o que você quer mudar" />
           <a href={waLink(model.name)} target="_blank" rel="noopener" style={leadStyles.button}>
-            Enviar pelo WhatsApp →
+            Agendar primeira conversa →
           </a>
         </form>
       </div>
@@ -390,11 +390,11 @@ function LeadFormSection({ model }) {
 
 function FaqSection() {
   const faqs = [
-    ['Esse modelo fica com a minha marca?', 'Sim. Adaptamos logo, paleta, textos, fotos, endereço, WhatsApp e seções para o seu escritório.'],
-    ['Preciso ter fotos profissionais?', 'Ajuda muito, mas não é obrigatório. Podemos começar com imagens provisórias e trocar depois pelas suas obras.'],
-    ['O site funciona no celular?', 'Sim. A adaptação considera desktop e mobile, com botões de contato visíveis para facilitar conversão.'],
-    ['Vocês configuram domínio e hospedagem?', 'Sim. Fazemos a publicação, SSL e conexão com domínio para deixar o site pronto para divulgar.'],
-    ['Posso pedir ajustes depois?', 'Sim. A entrega inclui rodada de ajustes para chegar no tom visual e comercial desejado.'],
+    ['Em que momento devo contratar um arquiteto?', 'O ideal é chamar antes de comprar materiais, contratar mão de obra ou definir soluções sozinho. Assim o projeto nasce com coerência, orçamento e menos retrabalho.'],
+    ['Vocês fazem projeto completo ou só interiores?', 'Atuamos em arquitetura residencial, reformas, interiores, marcenaria, iluminação e acompanhamento conforme o escopo de cada cliente.'],
+    ['Preciso ter planta do imóvel para começar?', 'Ajuda, mas não é obrigatório. Podemos orientar o levantamento inicial e indicar quais informações são necessárias para a primeira análise.'],
+    ['Como funciona o processo do projeto?', 'Começamos com conversa e briefing, depois estudo de layout/conceito, desenvolvimento, detalhamento técnico e suporte para execução.'],
+    ['Vocês acompanham a obra?', 'Sim, quando contratado no escopo. O acompanhamento ajuda a preservar o projeto, resolver dúvidas de execução e orientar fornecedores.'],
   ];
   return (
     <section style={faqStyles.wrap}>
