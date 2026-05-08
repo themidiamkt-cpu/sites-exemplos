@@ -91,6 +91,18 @@ const MODELS = [
     cover: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=1200&auto=format&fit=crop&q=80',
     Component: () => window.ConstrutoraSite ? <window.ConstrutoraSite /> : null,
   },
+  {
+    id: 'terracota',
+    name: 'Terracota Autoral',
+    tag: 'Interiores · Pacotes',
+    desc: 'Inspirado em páginas de interiores com pacotes, galeria sensorial e CTA para análise do ambiente.',
+    badge: 'Novo',
+    fakeUrl: 'themidia-interiores.com.br',
+    accent: '#a55f45',
+    bg: '#2b1b14',
+    cover: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&auto=format&fit=crop&q=80',
+    Component: () => window.TerracotaSite ? <window.TerracotaSite /> : null,
+  },
 ];
 
 const waLink = (modelName) => {
@@ -128,7 +140,7 @@ function Gallery({ navigate }) {
         </div>
 
         <div style={galleryStyles.heroBlock}>
-          <div style={galleryStyles.eyebrow}>SHOWCASE · 7 MODELOS PRONTOS</div>
+          <div style={galleryStyles.eyebrow}>SHOWCASE · 8 MODELOS PRONTOS</div>
           <h1 style={galleryStyles.title}>
             Sites para arquitetos<br />
             <span style={galleryStyles.titleAccent}>com cara de portfólio premium.</span>
