@@ -44,10 +44,10 @@
     .desktop-menu { display: none !important; }
     .mobile-site-menu {
       display: block;
-      position: fixed;
-      top: 68px;
-      right: 14px;
-      z-index: 9998;
+      position: fixed !important;
+      top: 86px;
+      right: 22px;
+      z-index: 10050;
       font-family: 'Manrope', system-ui, sans-serif;
     }
     .mobile-site-menu summary {
@@ -62,6 +62,7 @@
       gap: 5px;
       list-style: none;
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
     .mobile-site-menu summary::-webkit-details-marker { display: none; }
     .mobile-site-menu summary span {
@@ -72,9 +73,9 @@
       display: block;
     }
     .mobile-site-menu nav {
-      position: absolute;
-      top: 54px;
-      right: 0;
+      position: fixed;
+      top: 140px;
+      right: 22px;
       min-width: 210px;
       padding: 10px;
       border-radius: 16px;
