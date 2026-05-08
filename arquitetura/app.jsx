@@ -349,8 +349,8 @@ function PreviewShell({ model, navigate }) {
           Quero esse →
         </a>
       </div>
-      <MobileSiteMenu model={model} />
       <div className="preview-frame" style={previewStyles.frame}>
+        <MobileSiteMenu model={model} />
         {renderSiteWithInquiry(Site, model)}
       </div>
       <a href={waLink(model.name)} target="_blank" rel="noopener" className="wa-float">

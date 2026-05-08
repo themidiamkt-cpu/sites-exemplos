@@ -41,12 +41,13 @@
 
   @media (max-width: 860px) {
     html, body, #root, .preview-frame { width: 100%; max-width: 100%; overflow-x: hidden; }
+    .preview-frame { position: relative; }
     .desktop-menu { display: none !important; }
     .mobile-site-menu {
       display: block;
-      position: fixed !important;
-      top: 86px;
-      right: 22px;
+      position: absolute;
+      top: 24px;
+      right: 20px;
       z-index: 10050;
       font-family: 'Manrope', system-ui, sans-serif;
     }
@@ -73,9 +74,9 @@
       display: block;
     }
     .mobile-site-menu nav {
-      position: fixed;
-      top: 140px;
-      right: 22px;
+      position: absolute;
+      top: 54px;
+      right: 0;
       min-width: 210px;
       padding: 10px;
       border-radius: 16px;
